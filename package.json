@@ -1,0 +1,23 @@
+{
+  "name": "neuol",
+  "version": "0.0.1",
+  "description": "A experimental website for Neu Online Club, which is using Coffeescript and based on io.js/Koa/Mongodb.",
+  "main": "bin/bootstrap.js",
+  "repository": "https://github.com/NeuOL/neuol.git",
+  "author": "yfwz100 <yfwz100@yeah.net>",
+  "scripts": {
+    "start": "node bin/bootstrap"
+  },
+  "dependencies": {
+    "bluebird": "*",
+    "body-parser": "*",
+    "coffee-script": "*",
+    "cookie-parser": "*",
+    "express": "*",
+    "express-session": "*",
+    "jade": "*",
+    "marked": "*",
+    "morgan": "*",
+    "mongodb": "*"
+  }
+}
