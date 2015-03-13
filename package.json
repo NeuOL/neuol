@@ -16,6 +16,7 @@
     "express": "*",
     "express-session": "*",
     "jade": "*",
+    "ejs":"*",
     "marked": "*",
     "morgan": "*",
     "mongodb": "*"

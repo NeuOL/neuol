@@ -4,6 +4,7 @@ express     = require 'express'
 logger      = require 'morgan'
 path        = require 'path'
 session     = require 'express-session'
+ejs         = require 'ejs'
 router      = require './router'
 
 app         = express()
@@ -11,9 +12,10 @@ app         = express()
 # set the port to listen
 app.set 'port', process.env.PORT || 8080
 
-# set the view directory and engine as 'jade'.
-app.set 'views', path.join __dirname, '..', 'view', 'jade'
-app.set 'view engine', 'jade'
+# set the view directory and engine as 'ejs'.
+app.set 'views', path.join __dirname, 'views'
+app.engine '.html', ejs.__express
+app.set 'view engine', 'html'
 
 # log the requests.
 app.use logger 'combined'
@@ -33,10 +35,10 @@ app.use cookieParser()
 app.use '/', router
 
 # Mount CSS directory as '/style'.
-app.use '/style', express.static path.join __dirname, '..', 'view', 'style'
+app.use '/style', express.static path.join __dirname, 'views', 'style'
 
 # Mount client scripts referenced as '/script'.
-app.use '/script', express.static path.join __dirname, '..', 'client'
+app.use '/script', express.static path.join __dirname, 'views', 'script'
 
 app.listen app.get('port'), ->
   console.log "Server is running at #{app.get('port')}."
