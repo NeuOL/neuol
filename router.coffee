@@ -6,4 +6,4 @@ router.get '/', (req, res, next) ->
 	res.send 'test'
 
 ####
-moduele.exports = router
+module.exports = router
