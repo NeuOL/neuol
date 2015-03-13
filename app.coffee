@@ -4,7 +4,7 @@ express     = require 'express'
 logger      = require 'morgan'
 path        = require 'path'
 session     = require 'express-session'
-router 		= require './router'
+router      = require './router'
 
 app         = express()
 
