@@ -4,6 +4,7 @@ express     = require 'express'
 logger      = require 'morgan'
 path        = require 'path'
 session     = require 'express-session'
+router 		= require './router'
 
 app         = express()
 
@@ -27,6 +28,9 @@ app.use session
 app.use bodyParser.json()
 app.use bodyParser.urlencoded extended: off
 app.use cookieParser()
+
+# Set router
+app.use '/', router
 
 # Mount CSS directory as '/style'.
 app.use '/style', express.static path.join __dirname, '..', 'view', 'style'
